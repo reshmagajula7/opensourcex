@@ -72,11 +72,17 @@ export function AppLayout({ children }) {
         {}
         {user && (
           <div className="px-6 py-4 border-b border-slate-800 flex items-center gap-3">
-            <img 
-              src={user.avatar || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde'} 
-              alt={user.username}
-              className="w-10 h-10 rounded-full border border-indigo-500/50"
-            />
+            {user.avatarUrl ? (
+              <img 
+                src={user.avatarUrl} 
+                alt={user.username}
+                className="w-10 h-10 rounded-full border border-indigo-500/50 object-cover"
+              />
+            ) : (
+              <div className="w-10 h-10 rounded-full border border-indigo-500/50 bg-slate-850 flex items-center justify-center text-slate-350 font-bold text-sm shrink-0">
+                {user.username ? user.username.charAt(0).toUpperCase() : '?'}
+              </div>
+            )}
             <div className="overflow-hidden">
               <p className="text-sm font-semibold truncate">{user.username}</p>
               <p className="text-xs text-slate-400 capitalize">{user.role || 'Contributor'}</p>
@@ -133,11 +139,17 @@ export function AppLayout({ children }) {
             </Link>
             <div className="w-px h-6 bg-slate-800" />
             <Link to="/profile" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-              <img 
-                src={user?.avatar || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde'} 
-                alt={user?.username}
-                className="w-8 h-8 rounded-full border border-indigo-500/30"
-              />
+              {user?.avatarUrl ? (
+                <img 
+                  src={user.avatarUrl} 
+                  alt={user?.username}
+                  className="w-8 h-8 rounded-full border border-indigo-500/30 object-cover"
+                />
+              ) : (
+                <div className="w-8 h-8 rounded-full border border-indigo-500/30 bg-slate-850 flex items-center justify-center text-slate-350 font-bold text-xs shrink-0">
+                  {user?.username ? user.username.charAt(0).toUpperCase() : '?'}
+                </div>
+              )}
               <span className="text-sm font-medium text-slate-300">{user?.username}</span>
             </Link>
           </div>

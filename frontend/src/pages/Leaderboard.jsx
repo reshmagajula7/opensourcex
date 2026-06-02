@@ -78,11 +78,17 @@ export default function Leaderboard() {
                   )}
                   <CardContent className="p-6 flex flex-col items-center text-center">
                     <div className="relative">
-                      <img
-                        src={user.avatarUrl || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde'}
-                        alt={user.username}
-                        className="w-16 h-16 rounded-full border-2 border-slate-700/60"
-                      />
+                      {user.avatarUrl ? (
+                        <img
+                          src={user.avatarUrl}
+                          alt={user.username}
+                          className="w-16 h-16 rounded-full border-2 border-slate-700/60 object-cover"
+                        />
+                      ) : (
+                        <div className="w-16 h-16 rounded-full border-2 border-slate-700/60 bg-slate-850 flex items-center justify-center text-slate-350 font-black text-lg">
+                          {user.username ? user.username.charAt(0).toUpperCase() : '?'}
+                        </div>
+                      )}
                       <span className={`absolute -bottom-1 -right-1 w-6 h-6 rounded-full flex items-center justify-center text-xs font-black border ring-4 ring-slate-900 ${ringColor}`}>
                         {user.rank}
                       </span>
@@ -136,11 +142,17 @@ export default function Leaderboard() {
                       </TableCell>
                       <TableCell className="font-medium">
                         <div className="flex items-center gap-3">
-                          <img
-                            src={user.avatarUrl || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde'}
-                            alt={user.username}
-                            className="w-8 h-8 rounded-full border border-slate-800"
-                          />
+                          {user.avatarUrl ? (
+                            <img
+                              src={user.avatarUrl}
+                              alt={user.username}
+                              className="w-8 h-8 rounded-full border border-slate-800 object-cover"
+                            />
+                          ) : (
+                            <div className="w-8 h-8 rounded-full border border-slate-800 bg-slate-850 flex items-center justify-center text-slate-350 font-bold text-xs shrink-0">
+                              {user.username ? user.username.charAt(0).toUpperCase() : '?'}
+                            </div>
+                          )}
                           <span className="text-slate-200">{user.username}</span>
                         </div>
                       </TableCell>

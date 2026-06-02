@@ -200,11 +200,17 @@ export default function Dashboard() {
             <CardTitle className="text-lg font-semibold">GitHub Profile</CardTitle>
           </CardHeader>
           <CardContent className="p-6 flex flex-col items-center text-center">
-            <img
-              src={user?.avatar || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde'}
-              alt={user?.username}
-              className="w-20 h-20 rounded-full border-2 border-indigo-500/40 shadow-xl"
-            />
+            {user?.avatarUrl ? (
+              <img
+                src={user.avatarUrl}
+                alt={user?.username}
+                className="w-20 h-20 rounded-full border-2 border-indigo-500/40 shadow-xl object-cover"
+              />
+            ) : (
+              <div className="w-20 h-20 rounded-full border-2 border-indigo-500/40 shadow-xl bg-slate-850 border-slate-750 flex items-center justify-center text-slate-300 font-extrabold text-2xl">
+                {user?.username ? user.username.charAt(0).toUpperCase() : '?'}
+              </div>
+            )}
             <h3 className="text-lg font-bold text-slate-200 mt-4">{user?.username}</h3>
             <p className="text-xs text-indigo-400 capitalize">{user?.role || 'Contributor'}</p>
             {user?.bio ? (

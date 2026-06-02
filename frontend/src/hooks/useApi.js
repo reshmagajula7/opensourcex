@@ -38,6 +38,21 @@ export function useGetUserProfile() {
   });
 }
 
+export function useUpdateProfile(options = {}) {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: async (body) => {
+      const { data } = await api.put('/users/profile', body);
+      return data;
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: getGetUserProfileQueryKey() });
+      queryClient.invalidateQueries({ queryKey: getGetMeQueryKey() });
+    },
+    ...options,
+  });
+}
+
 export const getGetUserStatsQueryKey = () => ['users', 'stats'];
 
 export function useGetUserStats() {

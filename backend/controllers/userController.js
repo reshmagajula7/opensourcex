@@ -94,3 +94,31 @@ function calculateStreaks(dates) {
 
   return { currentStreak, longestStreak };
 }
+
+export const updateProfile = async (req, res) => {
+  const { avatarUrl, bio, email } = req.body;
+  try {
+    const user = await User.findById(req.userId);
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+    if (avatarUrl !== undefined) user.avatarUrl = avatarUrl;
+    if (bio !== undefined) user.bio = bio;
+    if (email !== undefined) user.email = email;
+    await user.save();
+    res.json({
+      message: 'Profile updated successfully',
+      user: {
+        id: user._id,
+        username: user.username,
+        email: user.email,
+        avatarUrl: user.avatarUrl,
+        bio: user.bio,
+        role: user.role,
+        contributionScore: user.contributionScore,
+      },
+    });
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to update profile' });
+  }
+};
