@@ -53,14 +53,14 @@ export default function Reports() {
 
   return (
     <div className="space-y-8 max-w-4xl mx-auto">
-      {/* Header */}
+      {}
       <div>
         <h1 className="text-3xl font-bold tracking-tight">PDF & CSV Reports</h1>
         <p className="text-slate-400 text-sm mt-1">Export your contribution footprint as formatted documents.</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Generator Form */}
+        {}
         <Card className="bg-slate-900 border-slate-800 md:col-span-1 h-fit">
           <CardHeader>
             <CardTitle className="text-lg font-semibold flex items-center gap-2">
@@ -118,7 +118,7 @@ export default function Reports() {
           </CardContent>
         </Card>
 
-        {/* Existing Reports List */}
+        {}
         <Card className="bg-slate-900 border-slate-800 md:col-span-2">
           <CardHeader>
             <CardTitle className="text-lg font-semibold">Report History</CardTitle>

@@ -35,14 +35,14 @@ export default function Contributions() {
 
   return (
     <div className="space-y-8 max-w-5xl mx-auto">
-      {/* Header */}
+      {}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <h1 className="text-3xl font-bold tracking-tight">Contribution History</h1>
           <p className="text-slate-400 text-sm mt-1">Detailed list of your commits, pull requests, issues, and reviews.</p>
         </div>
 
-        {/* Filter */}
+        {}
         <Select value={type} onValueChange={setType}>
           <SelectTrigger className="w-[180px] bg-slate-900 border-slate-800 text-slate-200">
             <SelectValue placeholder="Filter By Type" />
@@ -57,7 +57,7 @@ export default function Contributions() {
         </Select>
       </div>
 
-      {/* List */}
+      {}
       {isLoading ? (
         <div className="space-y-4">
           {Array.from({ length: 5 }).map((_, i) => (
@@ -85,7 +85,7 @@ export default function Contributions() {
             const Icon = TYPE_ICON[item.type] || GitCommit;
             const typeColor = TYPE_COLOR[item.type] || 'bg-slate-800 text-slate-400 border-slate-700';
 
-            // Work out display status for PRs or issues
+            
             let statusText = null;
             let statusColorClass = '';
             if (item.type === 'pull_request') {
@@ -99,7 +99,7 @@ export default function Contributions() {
             return (
               <Card key={item.id} className="bg-slate-900 border-slate-800 hover:border-slate-750 transition-colors">
                 <CardContent className="p-4 flex items-center justify-between gap-6">
-                  {/* Icon & Details */}
+                  {}
                   <div className="flex items-center gap-4 min-w-0">
                     <div className={`p-2.5 rounded-lg border ${typeColor} shrink-0`}>
                       <Icon size={18} />
@@ -116,7 +116,7 @@ export default function Contributions() {
                     </div>
                   </div>
 
-                  {/* Badges / Links */}
+                  {}
                   <div className="flex items-center gap-3 shrink-0">
                     {statusText && (
                       <Badge variant="outline" className={`text-[10px] px-2 py-0.5 border font-semibold ${statusColorClass}`}>

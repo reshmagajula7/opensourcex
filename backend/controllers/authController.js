@@ -7,7 +7,7 @@ const GITHUB_CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET ?? '';
 const CLIENT_URL = process.env.CLIENT_URL ?? 'http://localhost:5173';
 
 export const githubRedirect = (req, res) => {
-  // Use BACKEND_URL from environment variable if defined, or fallback to the request host headers, or default localhost:5000
+  
   const protocol = req.headers['x-forwarded-proto'] || req.protocol;
   const host = req.headers['x-forwarded-host'] || req.get('host');
   const backendUrl = process.env.BACKEND_URL || `${protocol}://${host}`;
@@ -27,7 +27,7 @@ export const githubCallback = async (req, res) => {
   }
 
   try {
-    // Exchange code for access token
+    
     const tokenRes = await fetch('https://github.com/login/oauth/access_token', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
@@ -45,13 +45,13 @@ export const githubCallback = async (req, res) => {
 
     const ghToken = tokenData.access_token;
 
-    // Fetch GitHub user data
+    
     const userRes = await fetch('https://api.github.com/user', {
       headers: { Authorization: `Bearer ${ghToken}`, 'User-Agent': 'OpenSourceX' },
     });
     const ghUser = await userRes.json();
 
-    // Upsert user in MongoDB
+    
     const userData = {
       githubId: String(ghUser.id),
       username: ghUser.login,
@@ -70,7 +70,7 @@ export const githubCallback = async (req, res) => {
       { upsert: true, new: true, setDefaultsOnInsert: true }
     );
 
-    // Generate JWT tokens
+    
     const accessToken = signAccessToken(user._id.toString());
     const refreshToken = signRefreshToken(user._id.toString());
 

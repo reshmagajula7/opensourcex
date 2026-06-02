@@ -27,7 +27,7 @@ export default function Insights() {
 
   return (
     <div className="space-y-8 max-w-4xl mx-auto">
-      {/* Header */}
+      {}
       <div>
         <h1 className="text-3xl font-bold tracking-tight flex items-center gap-2">
           <Sparkles className="text-indigo-400" />
@@ -36,9 +36,9 @@ export default function Insights() {
         <p className="text-slate-400 text-sm mt-1">Personalized productivity metrics and smart feedback on your coding habit.</p>
       </div>
 
-      {/* Overview Cards (Scores) */}
+      {}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {/* Productivity Score */}
+        {}
         <Card className="bg-slate-900 border-slate-800">
           <CardContent className="p-6 space-y-4">
             <div className="flex justify-between items-center text-xs font-semibold uppercase tracking-wider text-slate-500">
@@ -50,7 +50,7 @@ export default function Insights() {
           </CardContent>
         </Card>
 
-        {/* Impact Score */}
+        {}
         <Card className="bg-slate-900 border-slate-800">
           <CardContent className="p-6 space-y-4">
             <div className="flex justify-between items-center text-xs font-semibold uppercase tracking-wider text-slate-500">
@@ -62,7 +62,7 @@ export default function Insights() {
           </CardContent>
         </Card>
 
-        {/* Consistency Score */}
+        {}
         <Card className="bg-slate-900 border-slate-800">
           <CardContent className="p-6 space-y-4">
             <div className="flex justify-between items-center text-xs font-semibold uppercase tracking-wider text-slate-500">
@@ -75,7 +75,7 @@ export default function Insights() {
         </Card>
       </div>
 
-      {/* Summary Card */}
+      {}
       <Card className="bg-slate-900 border-slate-800">
         <CardHeader>
           <CardTitle className="text-lg font-semibold flex items-center gap-2">
@@ -90,15 +90,15 @@ export default function Insights() {
         </CardContent>
       </Card>
 
-      {/* Details Grid */}
+      {}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Strengths & Recommendations */}
+        {}
         <Card className="bg-slate-900 border-slate-800">
           <CardHeader className="pb-3 border-b border-slate-850">
             <CardTitle className="text-lg font-semibold">Strengths & Focus</CardTitle>
           </CardHeader>
           <CardContent className="p-6 space-y-6">
-            {/* Strengths */}
+            {}
             <div>
               <h3 className="text-xs font-bold uppercase tracking-wider text-indigo-400 mb-3">Key Strengths</h3>
               <div className="space-y-3">
@@ -111,7 +111,7 @@ export default function Insights() {
               </div>
             </div>
 
-            {/* Recommendations */}
+            {}
             <div>
               <h3 className="text-xs font-bold uppercase tracking-wider text-indigo-400 mb-3">Next Steps</h3>
               <div className="space-y-3">
@@ -126,7 +126,7 @@ export default function Insights() {
           </CardContent>
         </Card>
 
-        {/* Improvements */}
+        {}
         <Card className="bg-slate-900 border-slate-800">
           <CardHeader className="pb-3 border-b border-slate-850">
             <CardTitle className="text-lg font-semibold">Areas of Improvement</CardTitle>

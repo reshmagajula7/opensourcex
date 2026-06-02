@@ -30,13 +30,13 @@ export default function Repos() {
 
   return (
     <div className="space-y-8 max-w-7xl mx-auto">
-      {/* Header */}
+      {}
       <div>
         <h1 className="text-3xl font-bold tracking-tight">Repositories</h1>
         <p className="text-slate-400 text-sm mt-1">Manage and inspect synced repositories from your GitHub account.</p>
       </div>
 
-      {/* Filter and search controls */}
+      {}
       <div className="flex flex-col sm:flex-row gap-4 items-center justify-between bg-slate-900/40 p-4 rounded-xl border border-slate-800">
         <div className="relative w-full sm:max-w-xs">
           <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
@@ -49,7 +49,7 @@ export default function Repos() {
         </div>
 
         <div className="flex flex-wrap gap-4 w-full sm:w-auto">
-          {/* Language filter */}
+          {}
           <Select value={language} onValueChange={setLanguage}>
             <SelectTrigger className="w-[140px] bg-slate-950 border-slate-800 text-slate-200">
               <SelectValue placeholder="Language" />
@@ -66,7 +66,7 @@ export default function Repos() {
             </SelectContent>
           </Select>
 
-          {/* Sort selection */}
+          {}
           <Select value={sortBy} onValueChange={setSortBy}>
             <SelectTrigger className="w-[150px] bg-slate-950 border-slate-800 text-slate-200">
               <SelectValue placeholder="Sort By" />
@@ -81,7 +81,7 @@ export default function Repos() {
         </div>
       </div>
 
-      {/* Repository list grid */}
+      {}
       {isLoading ? (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {Array.from({ length: 4 }).map((_, i) => (
@@ -133,18 +133,18 @@ export default function Repos() {
 
                   <div className="space-y-3 pt-4 border-t border-slate-800/40">
                     <div className="flex flex-wrap items-center justify-between gap-4">
-                      {/* Left side: language */}
+                      {}
                       <span className={`px-2 py-0.5 rounded text-[10px] font-semibold border ${langColorClass}`}>
                         {repo.language || 'Unknown'}
                       </span>
 
-                      {/* Right side: updated at */}
+                      {}
                       <span className="text-[10px] text-slate-500 font-mono">
                         Updated {new Date(repo.updatedAt).toLocaleDateString()}
                       </span>
                     </div>
 
-                    {/* Stats badges */}
+                    {}
                     <div className="grid grid-cols-5 gap-2 text-center text-xs text-slate-400 bg-slate-950/40 p-2 rounded-lg border border-slate-850">
                       <div className="flex flex-col items-center justify-center">
                         <Star size={13} className="text-amber-500 mb-0.5" />

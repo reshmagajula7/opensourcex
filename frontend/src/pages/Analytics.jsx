@@ -19,7 +19,7 @@ const TOOLTIP_STYLE = {
 function buildDailyActivity(events) {
   if (!events) return [];
   const counts = new Map();
-  // Get past 14 days dates to populate base values
+  
   for (let i = 13; i >= 0; i--) {
     const d = new Date();
     d.setDate(d.getDate() - i);
@@ -55,13 +55,13 @@ export default function Analytics() {
 
   return (
     <div className="space-y-8 max-w-7xl mx-auto">
-      {/* Header */}
+      {}
       <div>
         <h1 className="text-3xl font-bold tracking-tight">Analytics & Trends</h1>
         <p className="text-slate-400 text-sm mt-1">Insights into your coding patterns, languages, and contribution trends.</p>
       </div>
 
-      {/* Streak cards */}
+      {}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {showLoading
           ? Array.from({ length: 3 }).map((_, i) => (
@@ -92,9 +92,9 @@ export default function Analytics() {
             })}
       </div>
 
-      {/* Middle row: charts */}
+      {}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Monthly Activity */}
+        {}
         <Card className="bg-slate-900 border-slate-800">
           <CardHeader>
             <CardTitle className="text-lg font-semibold flex items-center gap-2">
@@ -124,7 +124,7 @@ export default function Analytics() {
           </CardContent>
         </Card>
 
-        {/* Language distribution */}
+        {}
         <Card className="bg-slate-900 border-slate-800">
           <CardHeader>
             <CardTitle className="text-lg font-semibold flex items-center gap-2">
@@ -180,7 +180,7 @@ export default function Analytics() {
         </Card>
       </div>
 
-      {/* Bottom row: Daily Activity Area Chart */}
+      {}
       <Card className="bg-slate-900 border-slate-800">
         <CardHeader>
           <CardTitle className="text-lg font-semibold">14-Day Activity Velocity</CardTitle>

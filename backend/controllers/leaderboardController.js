@@ -12,7 +12,7 @@ export const getLeaderboard = async (req, res) => {
     dateFilter = { contributionDate: { $gte: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000) } };
   }
 
-  // Get all users sorted by contribution score
+  
   const users = await User.find()
     .select('username avatarUrl contributionScore')
     .sort({ contributionScore: -1 })

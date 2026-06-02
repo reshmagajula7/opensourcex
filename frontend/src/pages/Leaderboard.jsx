@@ -23,7 +23,7 @@ export default function Leaderboard() {
 
   return (
     <div className="space-y-8 max-w-5xl mx-auto">
-      {/* Header */}
+      {}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <h1 className="text-3xl font-bold tracking-tight">Leaderboard</h1>
@@ -65,7 +65,7 @@ export default function Leaderboard() {
         </div>
       ) : (
         <div className="space-y-8">
-          {/* Top 3 Podiums */}
+          {}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {top3.map((user) => {
               const ringColor = RANK_BADGES[user.rank] || 'border-slate-850';
@@ -114,7 +114,7 @@ export default function Leaderboard() {
             })}
           </div>
 
-          {/* List Table for rank 4+ */}
+          {}
           {otherUsers.length > 0 && (
             <Card className="bg-slate-900 border-slate-800 overflow-hidden">
               <Table>

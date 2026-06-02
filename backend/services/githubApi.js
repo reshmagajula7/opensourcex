@@ -11,7 +11,7 @@ export async function syncUserData(userId) {
     const token = user.githubAccessToken;
     const headers = { Authorization: `Bearer ${token}`, 'User-Agent': 'OpenSourceX' };
 
-    // Sync repositories
+    
     const reposRes = await fetch('https://api.github.com/user/repos?per_page=100&sort=updated', { headers });
     const repos = await reposRes.json();
 
@@ -38,7 +38,7 @@ export async function syncUserData(userId) {
       }
     }
 
-    // Sync events / contributions
+    
     const eventsRes = await fetch(
       `https://api.github.com/users/${user.username}/events/public?per_page=100`,
       { headers }
@@ -91,7 +91,7 @@ export async function syncUserData(userId) {
       }
     }
 
-    // Update contribution score
+    
     const totalContribs = await Contribution.countDocuments({ userId });
     await User.findByIdAndUpdate(userId, { contributionScore: totalContribs * 10 });
   } catch (err) {

@@ -18,17 +18,17 @@ export default function Profile() {
 
   return (
     <div className="space-y-8 max-w-2xl mx-auto">
-      {/* Header */}
+      {}
       <div>
         <h1 className="text-3xl font-bold tracking-tight">Your Profile</h1>
         <p className="text-slate-400 text-sm mt-1">Manage and view your linked GitHub profile details.</p>
       </div>
 
-      {/* Main card */}
+      {}
       <Card className="bg-slate-900 border-slate-800 overflow-hidden">
         <div className="h-24 bg-gradient-to-r from-indigo-600/30 to-purple-600/30 border-b border-slate-800" />
         <CardContent className="p-6 relative">
-          {/* Avatar positioning */}
+          {}
           <div className="absolute -top-12 left-6">
             <img
               src={profile?.avatarUrl || 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde'}
@@ -38,7 +38,7 @@ export default function Profile() {
           </div>
 
           <div className="pt-14 space-y-6">
-            {/* User name & role */}
+            {}
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <div>
                 <h2 className="text-2xl font-bold text-slate-100 flex items-center gap-2">
@@ -60,14 +60,14 @@ export default function Profile() {
               )}
             </div>
 
-            {/* Bio */}
+            {}
             {profile?.bio && (
               <div className="p-4 bg-slate-950/45 rounded-xl border border-slate-850">
                 <p className="text-sm text-slate-350 italic leading-relaxed">"{profile.bio}"</p>
               </div>
             )}
 
-            {/* Profile fields */}
+            {}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-slate-850">
               <div className="flex items-center gap-3 text-slate-350 text-sm">
                 <Mail size={16} className="text-slate-500 shrink-0" />

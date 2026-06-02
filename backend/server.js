@@ -4,7 +4,7 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import connectDB from './config/db.js';
 
-// Route imports
+
 import authRoutes from './routes/auth.js';
 import userRoutes from './routes/users.js';
 import repoRoutes from './routes/repos.js';
@@ -18,7 +18,7 @@ import reportRoutes from './routes/reports.js';
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware
+
 app.use(cors({
   origin: process.env.CLIENT_URL || 'http://localhost:5173',
   credentials: true,
@@ -27,12 +27,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-// Health check
+
 app.get('/api/healthz', (_req, res) => {
   res.json({ status: 'ok' });
 });
 
-// API Routes
+
 app.use('/api', authRoutes);
 app.use('/api', userRoutes);
 app.use('/api', repoRoutes);
@@ -43,13 +43,13 @@ app.use('/api', notificationRoutes);
 app.use('/api', insightRoutes);
 app.use('/api', reportRoutes);
 
-// Global error handler
+
 app.use((err, _req, res, _next) => {
   console.error('[ERROR]', err.message);
   res.status(500).json({ error: 'Internal server error' });
 });
 
-// Connect to MongoDB and start server
+
 connectDB().then(() => {
   app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);

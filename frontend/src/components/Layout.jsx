@@ -37,7 +37,7 @@ export function AppLayout({ children }) {
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col md:flex-row">
-      {/* Mobile Header */}
+      {}
       <header className="md:hidden flex items-center justify-between px-6 py-4 bg-slate-900 border-b border-slate-800 sticky top-0 z-40">
         <Link to="/dashboard" className="text-xl font-bold tracking-tight text-indigo-400">
           OpenSourceX
@@ -50,13 +50,13 @@ export function AppLayout({ children }) {
         </button>
       </header>
 
-      {/* Sidebar - Desktop & Mobile overlay */}
+      {}
       <aside className={`
         fixed inset-y-0 left-0 z-50 w-64 bg-slate-900 border-r border-slate-800 transform 
         ${mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'} 
         md:translate-x-0 md:static md:flex md:flex-col transition-transform duration-200 ease-in-out
       `}>
-        {/* Sidebar Header */}
+        {}
         <div className="h-16 flex items-center justify-between px-6 border-b border-slate-800">
           <Link to="/dashboard" className="text-2xl font-black tracking-wider text-indigo-400">
             OSX
@@ -69,7 +69,7 @@ export function AppLayout({ children }) {
           </button>
         </div>
 
-        {/* User profile area */}
+        {}
         {user && (
           <div className="px-6 py-4 border-b border-slate-800 flex items-center gap-3">
             <img 
@@ -84,7 +84,7 @@ export function AppLayout({ children }) {
           </div>
         )}
 
-        {/* Nav Links */}
+        {}
         <nav className="flex-1 px-4 py-4 space-y-1 overflow-y-auto">
           {navigation.map((item) => {
             const Icon = item.icon;
@@ -108,7 +108,7 @@ export function AppLayout({ children }) {
           })}
         </nav>
 
-        {/* Footer actions */}
+        {}
         <div className="p-4 border-t border-slate-800">
           <button
             onClick={logoutUser}
@@ -120,9 +120,9 @@ export function AppLayout({ children }) {
         </div>
       </aside>
 
-      {/* Main Content Area */}
+      {}
       <main className="flex-1 flex flex-col min-w-0 bg-slate-950 overflow-x-hidden">
-        {/* Desktop Header */}
+        {}
         <header className="hidden md:flex h-16 items-center justify-end px-8 border-b border-slate-900 bg-slate-950/50 backdrop-blur sticky top-0 z-30">
           <div className="flex items-center gap-4">
             <Link to="/notifications" className="relative p-1.5 rounded-full text-slate-400 hover:text-slate-200 transition-colors hover:bg-slate-900">
@@ -143,7 +143,7 @@ export function AppLayout({ children }) {
           </div>
         </header>
 
-        {/* Page Content Viewport */}
+        {}
         <div className="p-6 md:p-8 flex-1">
           {children}
         </div>

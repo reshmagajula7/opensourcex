@@ -37,7 +37,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col justify-between">
-      {/* Top Nav */}
+      {}
       <nav className="border-b border-slate-900 bg-slate-950/80 backdrop-blur sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <span className="text-xl font-bold tracking-tight text-indigo-400">OpenSourceX</span>
@@ -48,7 +48,7 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section */}
+      {}
       <main className="max-w-7xl mx-auto px-6 py-20 flex-1 flex flex-col items-center justify-center text-center">
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 text-xs font-semibold mb-6">
           <Zap size={14} />
@@ -68,7 +68,7 @@ export default function Home() {
           </Button>
         </div>
 
-        {/* Features Grid */}
+        {}
         <section className="mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl text-left">
           {features.map((feat, idx) => {
             const Icon = feat.icon;
@@ -85,7 +85,7 @@ export default function Home() {
         </section>
       </main>
 
-      {/* Footer */}
+      {}
       <footer className="border-t border-slate-900 bg-slate-950 py-8 text-center text-sm text-slate-500">
         <p>&copy; {new Date().getFullYear()} OpenSourceX. Built for developers.</p>
       </footer>

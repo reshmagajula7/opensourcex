@@ -176,7 +176,7 @@ export const getStreaks = async (req, res) => {
   });
 };
 
-// Helper to convert string ID to MongoDB ObjectId for aggregation pipelines
+
 function _toObjectId(id) {
   return new mongoose.Types.ObjectId(id);
 }

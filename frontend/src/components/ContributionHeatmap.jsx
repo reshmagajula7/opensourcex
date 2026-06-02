@@ -20,14 +20,14 @@ export function ContributionHeatmap({ data }) {
     );
   }
 
-  // Group data into weeks of 7 days
+  
   const weeks = [];
   let currentWeek = [];
 
   const firstDate = new Date(data[0].date);
   const firstDayOfWeek = firstDate.getDay();
 
-  // Pad the first week
+  
   for (let i = 0; i < firstDayOfWeek; i++) {
     currentWeek.push(null);
   }
@@ -47,7 +47,7 @@ export function ContributionHeatmap({ data }) {
     weeks.push(currentWeek);
   }
 
-  // To display month labels on top
+  
   const monthLabels = [];
   let lastMonth = -1;
 
@@ -69,7 +69,7 @@ export function ContributionHeatmap({ data }) {
   return (
     <div className="w-full overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-slate-800 scrollbar-track-transparent">
       <div className="min-w-[760px] p-2 bg-slate-900/40 rounded-xl border border-slate-800/60">
-        {/* Month Labels */}
+        {}
         <div className="relative h-6 text-[10px] text-slate-500 font-mono mb-1">
           {monthLabels.map((ml, idx) => (
             <span
@@ -83,7 +83,7 @@ export function ContributionHeatmap({ data }) {
         </div>
 
         <div className="flex gap-[3px]">
-          {/* Day Labels */}
+          {}
           <div className="flex flex-col justify-between text-[9px] text-slate-600 font-mono pr-2 select-none h-[95px] pt-1">
             {DAYS_OF_WEEK.map((day, idx) => (
               <span key={day} className={idx % 2 === 0 ? 'invisible' : ''}>
@@ -92,7 +92,7 @@ export function ContributionHeatmap({ data }) {
             ))}
           </div>
 
-          {/* Grid Columns (Weeks) */}
+          {}
           <div className="flex gap-[3px]">
             {weeks.map((week, weekIdx) => (
               <div key={weekIdx} className="flex flex-col gap-[3px]">
@@ -134,7 +134,7 @@ export function ContributionHeatmap({ data }) {
           </div>
         </div>
 
-        {/* Legend */}
+        {}
         <div className="flex items-center justify-end gap-1.5 mt-3 pr-2 text-[10px] text-slate-500 font-mono select-none">
           <span>Less</span>
           <div className="w-[8px] h-[8px] rounded-[1.5px] bg-slate-900 border border-slate-800" />

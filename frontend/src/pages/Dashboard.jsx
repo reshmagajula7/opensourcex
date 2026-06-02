@@ -69,7 +69,7 @@ export default function Dashboard() {
 
   return (
     <div className="space-y-8 max-w-7xl mx-auto">
-      {/* Header */}
+      {}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
@@ -94,7 +94,7 @@ export default function Dashboard() {
         </Button>
       </div>
 
-      {/* Stats Grid */}
+      {}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-4">
         {statsLoading
           ? Array.from({ length: 7 }).map((_, i) => (
@@ -121,7 +121,7 @@ export default function Dashboard() {
             })}
       </div>
 
-      {/* Heatmap Section */}
+      {}
       <Card className="bg-slate-900 border-slate-800">
         <CardHeader className="pb-3 border-b border-slate-800/60">
           <CardTitle className="text-lg font-semibold flex items-center gap-2">
@@ -134,9 +134,9 @@ export default function Dashboard() {
         </CardContent>
       </Card>
 
-      {/* Two Column Section */}
+      {}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Recent Activity */}
+        {}
         <Card className="bg-slate-900 border-slate-800 lg:col-span-2">
           <CardHeader className="pb-3 border-b border-slate-800/60">
             <CardTitle className="text-lg font-semibold">Recent Interactions</CardTitle>
@@ -194,7 +194,7 @@ export default function Dashboard() {
           </CardContent>
         </Card>
 
-        {/* User Info / Bio Card */}
+        {}
         <Card className="bg-slate-900 border-slate-800">
           <CardHeader className="pb-3 border-b border-slate-800/60">
             <CardTitle className="text-lg font-semibold">GitHub Profile</CardTitle>

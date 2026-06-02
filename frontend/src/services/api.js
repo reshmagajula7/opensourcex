@@ -10,7 +10,7 @@ const api = axios.create({
   },
 });
 
-// Request interceptor — attach JWT token
+
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('osx_access_token');
@@ -22,7 +22,7 @@ api.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-// Response interceptor — handle 401 and token refresh
+
 api.interceptors.response.use(
   (response) => response,
   async (error) => {

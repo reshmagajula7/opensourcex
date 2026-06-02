@@ -54,7 +54,7 @@ export const getStats = async (req, res) => {
 };
 
 export const syncGitHub = async (req, res) => {
-  // Fire and forget — sync runs in background
+  
   syncUserData(req.userId);
   res.json({ message: 'GitHub sync started', syncing: true });
 };
