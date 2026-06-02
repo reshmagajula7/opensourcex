@@ -4,7 +4,8 @@ import { ArrowRight, BarChart2, GitPullRequest, LayoutDashboard, Zap, Shield, Ac
 import { useAuth } from '../context/AuthContext.jsx';
 import { Navigate } from 'react-router-dom';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const rawApiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API_URL = rawApiUrl.endsWith('/api') ? rawApiUrl : `${rawApiUrl.replace(/\/$/, '')}/api`;
 
 export default function Home() {
   const { user, isLoading } = useAuth();
