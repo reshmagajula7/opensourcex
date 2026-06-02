@@ -6,14 +6,12 @@ const GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID ?? '';
 const GITHUB_CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET ?? '';
 const CLIENT_URL = process.env.CLIENT_URL ?? 'http://localhost:5173';
 
-export const githubRedirect = (_req, res) => {
-  const params = new URLSearchParams({
-    client_id: GITHUB_CLIENT_ID,
-    scope: 'user,repo,read:org',
-    redirect_uri: `${process.env.CLIENT_URL ? CLIENT_URL.replace(/:\d+$/, ':' + (process.env.PORT || 5000)) : 'http://localhost:5000'}/api/auth/callback`,
-  });
-  // Backend handles OAuth callback, so redirect_uri points to backend
-  const backendUrl = `http://localhost:${process.env.PORT || 5000}`;
+export const githubRedirect = (req, res) => {
+  // Use BACKEND_URL from environment variable if defined, or fallback to the request host headers, or default localhost:5000
+  const protocol = req.headers['x-forwarded-proto'] || req.protocol;
+  const host = req.headers['x-forwarded-host'] || req.get('host');
+  const backendUrl = process.env.BACKEND_URL || `${protocol}://${host}`;
+
   const callbackParams = new URLSearchParams({
     client_id: GITHUB_CLIENT_ID,
     scope: 'user,repo,read:org',
